@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import UpdateAddArticle from '../UpdateAddArticle';
 
 class Articles extends React.Component {
   state = {
@@ -27,6 +28,7 @@ class Articles extends React.Component {
               <p>{content}</p>
             </div>
           ))}
+          <UpdateAddArticle requestType={'POST'} articleID={null}/>
       </div>
     )
   }
