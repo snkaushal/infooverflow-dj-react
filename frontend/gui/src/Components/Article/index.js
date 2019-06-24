@@ -1,20 +1,28 @@
 import React from 'react';
+import axios from 'axios';
 
 class Article extends React.Component {
-  props = {
-    articles: []
+  state = {
+    article: {},
+    error: ''
+  }
+
+  componentDidMount() {
+    const articleID = this.props.match.params.articleID;
+    axios.get(`http://127.0.0.1:8000/api/${articleID}`)
+      .then(res => {
+        this.setState({ article: res.data });
+      })
+      .catch(err =>
+        this.setState({ error: err.data }));
   }
 
   render() {
     return (
       <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
-        {this.props.articles.map(({ title, content }) =>
-          (
-            <div>
-              <p>{title}</p>
-              <p>{content}</p>
-            </div>
-          ))}
+              Single Article
+              <p>{this.state.article.title}</p>
+              <p>{this.state.article.content}</p>
       </div>
     )
   }

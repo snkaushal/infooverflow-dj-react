@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Article from '../Article';
 
 class Articles extends React.Component {
   state = {
@@ -19,8 +18,15 @@ class Articles extends React.Component {
 
   render() {
     return (
-      <div>
-        <Article articles={this.state.articles}/>
+      <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
+        All Articles are here : <br />
+        {this.state.articles.map(({ id, title, content }) =>
+          (
+            <div>
+              <a href={`/${id}`}>{title}</a>
+              <p>{content}</p>
+            </div>
+          ))}
       </div>
     )
   }
