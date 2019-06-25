@@ -21,9 +21,9 @@ class Articles extends React.Component {
     return (
       <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
         All Articles are here : <br />
-        {this.state.articles.map(({ id, title, content }) =>
+        {this.state.articles.map(({ id, title, content }, i) =>
           (
-            <div>
+            <div key={i}>
               <a href={`/${id}`}>{title}</a>
               <p>{content}</p>
             </div>
