@@ -40,7 +40,7 @@ export const authLogin = (username, password) => {
     dispatch(authStart());
     axios.post('http://127.0.0.1:8000/rest-auth/login/', {
       username: username,
-      passowrd: password,
+      password: password,
     })
       .then(res => {
         const token = res.data.key;
@@ -54,14 +54,14 @@ export const authLogin = (username, password) => {
   }
 }
 
-export const authSignUp = (username, email, password1, passowrd2) => {
+export const authSignUp = (username, email, password1, password2) => {
   return dispatch => {
     dispatch(authStart());
-    axios.post('http://127.0.0.1:8000/rest-auth/registeration/', {
+    axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
       username: username,
       email: email,
-      passowrd1: password1,
-      passowrd2: passowrd2,
+      password1: password1,
+      password2: password2,
     })
       .then(res => {
         const token = res.data.key;
@@ -88,7 +88,7 @@ export const authCheckState = () => {
         dispatch(authLogout());
       } else {
         dispatch(authSuccess(token));
-        dispatch(checkAuthTimeout(expirationDate.getTime() - new Date().getTime()) / 1000);
+        dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000));
       }
     }
   }

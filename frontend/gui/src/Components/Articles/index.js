@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import UpdateAddArticle from '../UpdateAddArticle';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../Store/actions/auth';
 
 class Articles extends React.Component {
   state = {
@@ -20,6 +23,9 @@ class Articles extends React.Component {
   render() {
     return (
       <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
+        {this.props.isAuthenticated ? 
+        <div onClick={() => this.props.logout()}>Logout</div> : <Link to='/login'>Login</Link>
+      }
         All Articles are here : <br />
         {this.state.articles.map(({ id, title, content }, i) =>
           (
@@ -34,4 +40,16 @@ class Articles extends React.Component {
   }
 }
 
-export default Articles;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.token !== null
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(actions.authLogout())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Articles);

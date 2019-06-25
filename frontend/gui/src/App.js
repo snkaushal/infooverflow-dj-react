@@ -9,23 +9,23 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.onTryAutoSignUp();
-    alert(this.props.isAuthenticated);
   }
 
   render() {
     return (
       <div className="App">
         <Router>
-          <BaseRouter {...this.props}/>
+          <BaseRouter/>
         </Router>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    isAuthenticated: state.token === null
+    isAuthenticated: state.token !== null,
+    isLoading: state.loading
   }
 }
 
