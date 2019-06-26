@@ -1,7 +1,6 @@
 import React from 'react';
 import Login from '../../lib/components/Login';
 import classnames from 'classnames';
-import '../../styles/views/landing.scss';
 
 export default class Landing extends React.Component {
   render() {

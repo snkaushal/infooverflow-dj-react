@@ -1,0 +1,24 @@
+@import '../abstarcts/variables.scss';
+
+.io-input {
+  padding: $spacing-sm;
+  margin: $spacing-sm;
+  border-radius: $spacing-xs;
+  border: none;
+  box-shadow: 0 0 2px 1px $cyan;  
+  font-size: $spacing-md;
+}
+
+.io-input--submit {
+  background: $cyan;
+  border: 1px solid transparent;
+  font-weight: bold;
+
+  &:hover {
+    background: white;
+    border: 1px solid $cyan;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+

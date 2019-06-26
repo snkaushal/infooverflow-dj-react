@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/auth';
-import classnames from 'classnames';
-import '../../../styles/components/login.scss';
-import { NavLink, withRouter } from 'react-router-dom';
+import IOInput from '../IOInput';
+import IOLogo from '../IOLogo';
+import IOCard from '../IOCard';
+import IOLink from '../IOLink';
 
 
 class Login extends React.Component {
@@ -17,22 +18,19 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form
-        className={classnames('io-loginbox')}
-        onSubmit={(e) => this.loginSubmit(e)}
-      >
-        <b className={classnames('io-loginbox__header')}>
-          <span>I</span><span>O</span>
-        </b>
-        <p>Please fill in the login details</p>
-        <label><b>Username : </b></label>
-        <input type='text' name='username' />
-        <label><b>Password : </b></label>
-        <input type='password' name='password' />
-        <input type='submit' value='Login' />
-        <br />
-        Don't have an account? <br/>
-        <NavLink className={classnames('io-loginbox__link')} to='/signup'><b>Sign up</b></NavLink>
+      <form onSubmit={(e) => this.loginSubmit(e)} >
+        <IOCard>
+          <IOLogo />
+          <p>Please fill in the login details</p>
+          <label><b>Username : </b></label>
+          <IOInput type={'text'} name={'username'} />
+          <label><b>Password : </b></label>
+          <IOInput type={'password'} name={'password'} />
+          <IOInput type={'submit'} name={'Login'} />
+          <br />
+          Don't have an account? <br />
+          <IOLink to={'/signup'} value={'Sign Up'}/>
+        </IOCard>
       </form>
     )
   }
@@ -51,4 +49,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

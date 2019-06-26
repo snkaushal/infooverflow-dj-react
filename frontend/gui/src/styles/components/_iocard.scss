@@ -1,0 +1,10 @@
+@import '../abstarcts/variables.scss';
+
+.io-card {
+  display: flex;
+  flex-direction: column;
+  background: lighten($color: $teal, $amount: 40%);
+  padding: $spacing-xl;
+  border-radius: $spacing-xs;
+  text-align: center;
+}

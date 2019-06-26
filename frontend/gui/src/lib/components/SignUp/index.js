@@ -1,6 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/auth';
+import IOInput from '../IOInput';
+import classnames from 'classnames';
+import IOLogo from '../IOLogo';
+import IOCard from '../IOCard';
+import IOLink from '../IOLink';
 
 class SignUp extends React.Component {
   onSignUp = (e) => {
@@ -14,17 +19,26 @@ class SignUp extends React.Component {
   }
 
   render() {
-    const { loading, error } = this.props;
-
     return (
-      <form onSubmit={(e) => this.onSignUp(e)}>
-        {error ? alert(error) : null}
-        {loading ? 'Loading...' : ''}
-        <input type='text' name='username' />
-        <input type='email' name='email' />
-        <input type='password' name='password1' />
-        <input type='password' name='password2' />
-        <input type='submit' value='Login' />
+      <form 
+        className={classnames('io-signup')}
+        onSubmit={(e) => this.onSignUp(e)} >
+        <IOCard>
+          <IOLogo />
+          <p>Please fill in the registration details</p>
+          <label><b>Username : </b></label>
+          <IOInput type={'text'} name={'username'} />
+          <label><b>Email : </b></label>
+          <IOInput type={'email'} name={'Email'} />
+          <label><b>Password : </b></label>
+          <IOInput type={'password'} name={'password1'} />
+          <label><b>Confirm Password : </b></label>
+          <IOInput type={'password'} name={'password2'} />
+          <IOInput type={'submit'} name={'Login'} />
+          <br />
+          Already have an account? <br />
+          <IOLink to={'/login'} value={'Login'}/>
+        </IOCard>
       </form>
     )
   }

@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/auth';
 import classnames from 'classnames';
-import './styles/views/app.scss';
+import './styles/_main.scss';
 
 class App extends React.Component {
 
