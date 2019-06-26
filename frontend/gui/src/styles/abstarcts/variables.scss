@@ -1,0 +1,28 @@
+
+
+$cyan: #00A9B9;
+$ocean: #00B8D9;
+$teal: #20C997;
+$success: #28A745;
+$info: #00A9B9;
+
+$io-background: #F7F7F7;
+$max-width: 1200px;
+
+:export {
+  cyan: $cyan;
+}
+
+$spacing : (
+  'xs': 5px,
+  'sm': 8px,
+  'md': 16px,
+  'lg': 30px,
+  'xl': 36px 
+);
+
+$spacing-xs: map-get($spacing, xs);
+$spacing-sm: map-get($spacing, sm);
+$spacing-md: map-get($spacing, md);
+$spacing-lg: map-get($spacing, lg);
+$spacing-xl: map-get($spacing, xl);

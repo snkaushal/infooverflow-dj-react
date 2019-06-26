@@ -3,7 +3,7 @@ import axios from 'axios';
 import UpdateAddArticle from '../UpdateAddArticle';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../../Store/actions/auth';
+import * as actions from '../../../store/actions/auth';
 
 class Articles extends React.Component {
   state = {

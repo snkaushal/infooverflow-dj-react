@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
 import BaseRouter from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from './Store/actions/auth';
+import * as actions from './store/actions/auth';
+import classnames from 'classnames';
+import './styles/views/app.scss';
 
 class App extends React.Component {
 
@@ -13,7 +14,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={classnames('io-app')}>
         <Router>
           <BaseRouter/>
         </Router>

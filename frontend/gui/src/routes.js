@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Articles from './Components/Articles';
-import Article from './Components/Article';
-import Login from './Components/Login';
-import SignUp from './Components/SignUp';
+import Landing from './app/views/Landing';
+import Articles from './lib/components/Articles';
+import SignUp from './lib/components/SignUp';
+
 const BaseRouter = (props) => (
   <div>
-    <Route exact path='/articles/' component={Articles}/>
-    <Route exact path='/articles/:articleID' component={Article}/>
-    <Route exact path='/login' component={Login}/>
+    <Route exact path='/login' component={Landing}/>
+    <Route exact path='/' component={Articles}/>
     <Route exact path='/signup' component={SignUp}/>
   </div>
 )

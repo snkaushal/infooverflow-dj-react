@@ -1,0 +1,7 @@
+@import '../abstarcts/variables.scss';
+
+body, html, .io-app {
+  background: $io-background;
+  width: 100%;
+  height: 100%;
+}
