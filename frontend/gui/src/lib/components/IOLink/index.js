@@ -3,7 +3,13 @@ import classnames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
 const IOLink = (props) => {
-  return <NavLink className={classnames('io-link')} to={props.to}><b>{props.value}</b></NavLink>
+  return <NavLink
+    className={classnames('io-link')}
+    to={props.to}
+    onClick={props.onClick}
+  >
+    <b>{props.value}</b>
+  </NavLink>
 }
 
 export default IOLink;

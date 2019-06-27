@@ -6,11 +6,15 @@
   justify-content: center;
   font-size: 2*$spacing-xl;
 
-  & > :first-child {
+  & > a {
+    text-decoration: none;
+  }
+
+  & > a > :first-child {
     color: $info;
   }
 
-  & > :nth-child(2n) {
+  & > a > :nth-child(2n) {
     color: $success
   }
 }

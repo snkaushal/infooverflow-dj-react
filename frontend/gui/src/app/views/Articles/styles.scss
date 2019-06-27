@@ -1,0 +1,15 @@
+@import '../../../styles/abstarcts/variables';
+
+.io-articles {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.io-articles__article {
+  margin: $spacing-md;
+  flex: 1 0 39%;
+}

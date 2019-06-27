@@ -3,8 +3,12 @@
 .io-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
   background: lighten($color: $teal, $amount: 40%);
   padding: $spacing-xl;
   border-radius: $spacing-xs;
   text-align: center;
+  height: inherit;
+  box-shadow: 0 0 2px 1px $cyan;  
 }

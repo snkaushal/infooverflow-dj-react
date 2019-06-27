@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 @import
-  'views/landing',
   'views/app';
 
 @import 
@@ -9,4 +8,5 @@
   'components/iolink',
   'components/iologo',
   'components/iocard',
+  'components/login',
   'components/ioinput';

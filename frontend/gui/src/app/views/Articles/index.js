@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import UpdateAddArticle from '../UpdateAddArticle';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/auth';
+import IOCard from '../../../lib/components/IOCard';
+import IOLink from '../../../lib/components/IOLink';
+import classnames from 'classnames';
+import './styles.scss';
 
 class Articles extends React.Component {
   state = {
@@ -22,20 +24,15 @@ class Articles extends React.Component {
 
   render() {
     return (
-      <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
-        {this.props.isAuthenticated ? 
-        <div onClick={() => this.props.logout()}>Logout</div> : <Link to='/login'>Login</Link>
-      }
-        All Articles are here : <br />
-        {this.state.articles.map(({ id, title, content }, i) =>
-          (
-            <div key={i}>
-              <a href={`/${id}`}>{title}</a>
-              <p>{content}</p>
-            </div>
-          ))}
-          <UpdateAddArticle requestType={'POST'} articleID={null}/>
-      </div>
+        <div className={classnames('io-articles')}>
+          {this.state.articles.map(({ id, title, content }, i) =>
+            (
+              <IOCard key={i} className={'io-articles__article'}>
+                <IOLink to={`/articles/${id}`} value={title} />
+                <p>{content}</p>
+              </IOCard>
+            ))}
+        </div>
     )
   }
 }

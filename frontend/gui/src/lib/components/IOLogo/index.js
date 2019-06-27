@@ -1,11 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 class IOLogo extends React.Component {
   render() {
     return (
       <b className={classnames('io-logo')}>
-        <span>I</span><span>O</span>
+      <NavLink to='/'><span>I</span><span>O</span></NavLink>
       </b>
     )
   }

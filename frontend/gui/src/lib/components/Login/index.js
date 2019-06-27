@@ -5,7 +5,7 @@ import IOInput from '../IOInput';
 import IOLogo from '../IOLogo';
 import IOCard from '../IOCard';
 import IOLink from '../IOLink';
-
+import classnames from 'classnames';
 
 class Login extends React.Component {
   loginSubmit = (e) => {
@@ -18,7 +18,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(e) => this.loginSubmit(e)} >
+      <form
+        className={classnames('io-login')}
+        onSubmit={(e) => this.loginSubmit(e)} >
         <IOCard>
           <IOLogo />
           <p>Please fill in the login details</p>
@@ -29,7 +31,7 @@ class Login extends React.Component {
           <IOInput type={'submit'} name={'Login'} />
           <br />
           Don't have an account? <br />
-          <IOLink to={'/signup'} value={'Sign Up'}/>
+          <IOLink to={'/signup'} value={'Sign Up'} />
         </IOCard>
       </form>
     )
@@ -38,7 +40,7 @@ class Login extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading,
+    isLoading: state.loading,
     error: state.error
   }
 }

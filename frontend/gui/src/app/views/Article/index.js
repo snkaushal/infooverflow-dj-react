@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import UpdateAddArticle from '../UpdateAddArticle';
+import UpdateAddArticle from '../../../lib/components/UpdateAddArticle';
+import IOCard from '../../../lib/components/IOCard';
 
 class Article extends React.Component {
   state = {
@@ -20,12 +21,11 @@ class Article extends React.Component {
 
   render() {
     return (
-      <div style={{ color: 'black', background: 'lightgrey', height: '100%' }}>
-              Single Article
-              <p>{this.state.article.title}</p>
-              <p>{this.state.article.content}</p>
-              <UpdateAddArticle requestType={'PUT'} articleID={this.props.match.params.articleID}/>
-      </div>
+      <IOCard>
+        <p>{this.state.article.title}</p>
+        <p>{this.state.article.content}</p>
+        <UpdateAddArticle requestType={'PUT'} articleID={this.props.match.params.articleID} />
+      </IOCard>
     )
   }
 }
