@@ -5,7 +5,6 @@ import IOInput from '../IOInput';
 import classnames from 'classnames';
 import IOLogo from '../IOLogo';
 import IOCard from '../IOCard';
-import IOLink from '../IOLink';
 
 class SignUp extends React.Component {
   onSignUp = (e) => {
@@ -15,7 +14,7 @@ class SignUp extends React.Component {
     const password2 = e.target.elements.password2.value;
     const password1 = e.target.elements.password1.value;
     this.props.userSignUp(username, email, password1, password2);
-    this.props.history.push('/articles');
+    this.props.closeModal();
   }
 
   render() {
@@ -34,10 +33,7 @@ class SignUp extends React.Component {
           <IOInput type={'password'} name={'password1'} />
           <label><b>Confirm Password : </b></label>
           <IOInput type={'password'} name={'password2'} />
-          <IOInput type={'submit'} name={'Login'} />
-          <br />
-          Already have an account? <br />
-          <IOLink to={'/login'} value={'Login'}/>
+          <IOInput type={'submit'} name={'Sign Up'} />
         </IOCard>
       </form>
     )

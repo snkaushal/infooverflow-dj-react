@@ -9,6 +9,12 @@
   font-size: $spacing-md;
 }
 
+.io-input--textfield {
+  max-width: $max-width/3;
+  width: 100%;
+  height: $max-width/6;
+}
+
 .io-input--submit {
   background: $cyan;
   border: 1px solid transparent;

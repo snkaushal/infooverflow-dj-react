@@ -1,9 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import IOInput from '../IOInput';
+import IOInput from '../../../../lib/components/IOInput';
 
-class UpdateAddArticle extends React.Component {
-  submitRequest = (e, requestType, articleID) => {
+class UpdateArticle extends React.Component {
+  state = {
+    title: '',
+    conetent: ''
+  }
+
+  submitRequest = (requestType, articleID, e) => {
     const title = e.target.elements.title.value;
     const content = e.target.elements.content.value;
     switch (requestType) {
@@ -33,13 +38,20 @@ class UpdateAddArticle extends React.Component {
 
   render() {
     const { requestType, articleID } = this.props;
+
     return (
       <div>
-        <form onSubmit={(e) => this.submitRequest(e, requestType, articleID)}>
-          <label>Title: </label>
-          <IOInput type={'text'} name={'title'} />
-          <label>Content: </label>
-          <IOInput type={'textfield'} name={'content'} />
+        <form onSubmit={(e) => this.submitRequest(requestType, articleID, e)}>
+          <label>Title: </label><br />
+          <IOInput
+            type={'text'}
+            name={'title'}
+          /><br />
+          <label>Content: </label><br />
+          <IOInput
+            type={'textfield'}
+            name={'content'}
+          /><br />
           <IOInput type='submit' name={requestType === 'POST' ? 'ADD' : 'UPDATE'} />
         </form>
       </div>
@@ -47,4 +59,4 @@ class UpdateAddArticle extends React.Component {
   }
 }
 
-export default UpdateAddArticle;
+export default UpdateArticle;

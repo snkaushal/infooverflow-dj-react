@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div className={classnames('io-app')}>
         <Router>
-          <BaseRouter/>
+          <BaseRouter isAuthenticated={this.props.isAuthenticated}/>
         </Router>
       </div>
     );

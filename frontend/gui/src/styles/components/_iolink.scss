@@ -4,6 +4,7 @@
   color: $cyan;
   font-size: $spacing-md;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: darken($color: $cyan, $amount: 10%);
