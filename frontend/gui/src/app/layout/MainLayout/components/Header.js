@@ -13,16 +13,21 @@ class Header extends React.Component {
         <IOLogo />
         <div className={classnames('io-header__navlinks')}>
           {this.props.isAuthenticated ?
-            (<IOLink to={'/'} value={'Logout'} onClick={() => this.props.logout()} />) :
+            (
+              <div>
+                Welcome {this.props.username} &nbsp;
+                <IOLink to={'/'} value={'Logout'} onClick={() => this.props.logout()} />
+              </div>
+            ) :
             (
               <React.Fragment>
                 <IOModal
                   renderContext={(openModal, closeModal) => (<div onClick={openModal}>Login</div>)}
-                  renderBody={(openModal, closeModal) => <Login closeModal={closeModal}/>}
+                  renderBody={(openModal, closeModal) => <Login closeModal={closeModal} />}
                 />
                 <IOModal
                   renderContext={(openModal, closeModal) => (<div onClick={openModal}>Sign Up</div>)}
-                  renderBody={(openModal, closeModal) => <SignUp closeModal={closeModal}/>}
+                  renderBody={(openModal, closeModal) => <SignUp closeModal={closeModal} />}
                 />
               </React.Fragment>
             )

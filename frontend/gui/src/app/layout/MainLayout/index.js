@@ -8,7 +8,7 @@ class MainLayout extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header isAuthenticated={this.props.isAuthenticated} logout={this.props.logout} />
+        <Header {...this.props} logout={this.props.logout} />
         <div className={'io-mainlayout'}>
           {this.props.children}
         </div>
@@ -20,6 +20,8 @@ class MainLayout extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.token !== null,
+    username: state.username,
+    useremail: state.useremail
   }
 }
 

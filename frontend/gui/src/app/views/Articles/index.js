@@ -20,7 +20,9 @@ class Articles extends React.Component {
         Authorization: this.props.token
       }
       getArticles().then(
-        res => this.setState({ articles: res.data })
+        res => this.setState({
+          articles: res.data.filter(article => article.user === this.props.useremail)
+        })
       ).catch(
         err => this.setState({ error: err.data })
       )
@@ -47,7 +49,8 @@ class Articles extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.token !== null,
-    token: state.token
+    token: state.token,
+    useremail: state.useremail
   }
 }
 
