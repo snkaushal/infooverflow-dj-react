@@ -30,12 +30,13 @@ class Articles extends React.Component {
   render() {
     return (
       <div className={classnames('io-articles')}>
-        {this.state.articles.map(({ id, user, title, content }, i) =>
+        {this.state.articles.map(({ id, user, username, title, content }, i) =>
           (
             <IOCard key={i} className={'io-articles__article'}>
               <IOLink to={`/articles/${id}`} value={title} isAuthenticated={this.props.isAuthenticated} />
               <p>{content}</p>
-              <b>User : </b> {user}
+              <b>User Email : </b> {user}
+              <b>Username : </b> {username}
             </IOCard>
           ))}
       </div>

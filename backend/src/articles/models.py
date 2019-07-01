@@ -10,7 +10,13 @@ class Articles(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        default='1'
+        default=1,
+        related_name='useremail'
+    )
+    username = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        default=1,
     )
 
     def __str__(self):

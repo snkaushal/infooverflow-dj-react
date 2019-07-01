@@ -146,6 +146,10 @@ REST_FRAMEWORK = {
     ),
 }
 
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'articles.api.serializers.TokenSerializer',
+}
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
