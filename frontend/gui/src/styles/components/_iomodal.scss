@@ -12,9 +12,11 @@
 }
 
 .io-modal--open {
-  position: absolute;
-  height: 100%;
-  width: 50%;
+  overflow-y: hidden;
+  position: fixed;
+  height: max-content;
+  width: 30%;
+  min-width: 350px;
   z-index: 10;
   top: 0;
   bottom: 0;

@@ -3,6 +3,7 @@ import axios from 'axios';
 import UpdateAddArticle from './components/UpdateArticle';
 import IOCard from '../../../lib/components/IOCard';
 import { connect } from 'react-redux'
+import { getArticle } from '../../requests';
 
 class Article extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class Article extends React.Component {
         Authorization: this.props.token
       }
       const articleID = this.props.match.params.articleID;
-      axios.get(`http://127.0.0.1:8000/api/${articleID}/`)
+        getArticle(articleID)
         .then(res => {
           this.setState({ article: res.data });
         })

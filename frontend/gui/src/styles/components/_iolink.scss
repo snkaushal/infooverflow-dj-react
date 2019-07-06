@@ -1,12 +1,13 @@
 @import '../abstarcts/variables.scss';
 
 .io-link {
-  color: $cyan;
+  display: block;
+  color: white;
   font-size: $spacing-md;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    color: darken($color: $cyan, $amount: 10%);
+    color: darken($color: white, $amount: 10%);
   }
 }

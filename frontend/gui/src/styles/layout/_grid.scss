@@ -1,0 +1,24 @@
+@import '../abstarcts/variables.scss';
+
+.io-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.io-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .io-row-1-of-2 {
+    flex: 1 1 50%;
+  }
+
+  .io-row-1-of-3 {
+    flex: 1 1 33%;
+  }
+
+  .io-row-2-of-3 {
+    flex: 1 1 66%;
+  }
+}

@@ -14,10 +14,12 @@ class Header extends React.Component {
         <div className={classnames('io-header__navlinks')}>
           {this.props.isAuthenticated ?
             (
-              <div>
-                Welcome {this.props.username} &nbsp;
+              <React.Fragment>
+                Welcome {this.props.username}
+                <IOLink to={'/articles'} value={'Articles'} isAuthenticated={this.props.isAuthenticated}/>
+                <IOLink to={'/create'} value={'Create Article'} isAuthenticated={this.props.isAuthenticated}/>
                 <IOLink to={'/'} value={'Logout'} onClick={() => this.props.logout()} />
-              </div>
+              </React.Fragment>
             ) :
             (
               <React.Fragment>

@@ -2,19 +2,18 @@
 
 .io-logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2*$spacing-xl;
+  width: max-content;
+  font-size: 2 * $spacing-xl;
 
   & > a {
     text-decoration: none;
   }
 
   & > a > :first-child {
-    color: $info;
+    color: $primary;
   }
 
   & > a > :nth-child(2n) {
-    color: $success
+    color: $secondary
   }
 }

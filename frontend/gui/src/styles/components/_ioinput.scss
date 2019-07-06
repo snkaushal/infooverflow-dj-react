@@ -5,7 +5,7 @@
   margin: $spacing-sm;
   border-radius: $spacing-xs;
   border: none;
-  box-shadow: 0 0 2px 1px $cyan;  
+  box-shadow: 0 0 2px 1px $primary;  
   font-size: $spacing-md;
 }
 
@@ -16,15 +16,18 @@
 }
 
 .io-input--submit {
-  background: $cyan;
-  border: 1px solid transparent;
+  background: $primary;
+  border: 1px solid white;
   font-weight: bold;
+  box-shadow: none;
+  color: white;
 
   &:hover {
     background: white;
-    border: 1px solid $cyan;
+    border: 1px solid $primary;
     user-select: none;
     cursor: pointer;
+    color: $primary
   }
 }
 

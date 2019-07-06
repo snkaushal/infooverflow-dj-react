@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/auth';
-import IOInput from '../IOInput';
-import IOLogo from '../IOLogo';
-import IOCard from '../IOCard';
+import IOInput from '../../components/IOInput';
+import IOCard from '../../components/IOCard';
 import classnames from 'classnames';
 
 class Login extends React.Component {
@@ -21,7 +20,6 @@ class Login extends React.Component {
           className={classnames('io-login')}
           onSubmit={(e) => this.loginSubmit(e)} >
           <IOCard>
-            <IOLogo />
             <p>Please fill in the login details</p>
             <label><b>Username : </b></label>
             <IOInput type={'text'} name={'username'} />

@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/auth';
-import IOInput from '../IOInput';
+import IOInput from '../../components/IOInput';
 import classnames from 'classnames';
-import IOLogo from '../IOLogo';
-import IOCard from '../IOCard';
 
 class SignUp extends React.Component {
   onSignUp = (e) => {
@@ -22,19 +20,17 @@ class SignUp extends React.Component {
       <form 
         className={classnames('io-signup')}
         onSubmit={(e) => this.onSignUp(e)} >
-        <IOCard>
-          <IOLogo />
-          <p>Please fill in the registration details</p>
-          <label><b>Username : </b></label>
+          <h3>Join Our Q&A Community</h3>
+          <label><b>Username </b></label>
           <IOInput type={'text'} name={'username'} />
-          <label><b>Email : </b></label>
+          <label><b>Email </b></label>
           <IOInput type={'email'} name={'Email'} />
-          <label><b>Password : </b></label>
+          <label><b>Password </b></label>
           <IOInput type={'password'} name={'password1'} />
-          <label><b>Confirm Password : </b></label>
+          <label><b>Confirm Password </b></label>
           <IOInput type={'password'} name={'password2'} />
-          <IOInput type={'submit'} name={'Sign Up'} />
-        </IOCard>
+          <IOInput type={'submit'} name={'Sign Up For Free'} />
+          <p>By signing up you agree to our terms and conditions</p>
       </form>
     )
   }

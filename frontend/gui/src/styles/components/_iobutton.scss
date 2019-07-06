@@ -1,0 +1,23 @@
+@import '../abstarcts/variables.scss';
+
+.io-button {
+  background: $primary;
+  border: 1px solid $primary;
+  border-radius: $border-radius;
+}
+
+.io-button:hover  {
+  background: white;
+}
+
+.io-button > a {
+  display: block;
+  padding: $spacing-sm;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $primary;
+  }
+}

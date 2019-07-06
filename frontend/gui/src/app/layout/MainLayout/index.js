@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import Header from './components/Header';
+// import Header from './components/Header';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../store/actions/auth';
 
@@ -8,7 +8,7 @@ class MainLayout extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header {...this.props} logout={this.props.logout} />
+        {/* <Header {...this.props} logout={this.props.logout} /> */}
         <div className={'io-mainlayout'}>
           {this.props.children}
         </div>

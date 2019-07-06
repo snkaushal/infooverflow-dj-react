@@ -1,0 +1,51 @@
+@import '../abstarcts/variables.scss';
+
+@each $size, $value in $spacing {
+  .io-#{$size}-marg {
+    margin: $value;
+  }
+  .io-#{$size}-marg--horiz {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .io-#{$size}-marg--vert {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .io-#{$size}-marg--top {
+    margin-top: $value;
+  }
+  .io-#{$size}-marg--bottom {
+    margin-bottom: $value;
+  }
+  .io-#{$size}-marg--left {
+    margin-left: $value;
+  }
+  .io-#{$size}-marg--right {
+    margin-right: $value;
+  }
+
+  .io-#{$size}-pad {
+    padding: $value;
+  }
+  .io-#{$size}-pad--horiz {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .io-#{$size}-pad--vert {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .io-#{$size}-pad--top {
+    padding-top: $value;
+  }
+  .io-#{$size}-pad--bottom {
+    padding-bottom: $value;
+  }
+  .io-#{$size}-pad--left {
+    padding-left: $value;
+  }
+  .io-#{$size}-pad--right {
+    padding-right: $value;
+  }
+}

@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: lighten($color: $teal, $amount: 40%);
+  background: white;
   padding: $spacing-xl;
-  border-radius: $spacing-xs;
+  border-radius: $border-radius;
   text-align: center;
   height: inherit;
-  box-shadow: 0 0 2px 1px $cyan;  
+  box-shadow: 0 0 2px 1px $primary;  
 }

@@ -1,18 +1,14 @@
 @import '../../../styles/abstarcts/variables';
 
-.io-mainlayout {
-  max-width: $max-width;
-  margin: $spacing-lg auto;
-}
 
 .io-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: lighten($color: $teal, $amount: 40%);
+  background: white;
   padding: 0 $spacing-md;
   text-align: center;
-  box-shadow: 0 0 4px 0 $cyan;  
+  box-shadow: 0px -1px 4px 0px black;;  
 }
 
 .io-header__navlinks {
@@ -20,6 +16,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: black;
+
+  & > div {
+    color: $primary;
+    font-weight: bold;
+  }
 
   & > * {
   padding: 0 $spacing-sm;

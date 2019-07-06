@@ -5,7 +5,7 @@ import IOCard from '../../../lib/components/IOCard';
 import IOLink from '../../../lib/components/IOLink';
 import classnames from 'classnames';
 import './styles.scss';
-import { getArticles } from '../requests';
+import { getArticles } from '../../requests';
 
 class Articles extends React.Component {
   state = {

@@ -1,24 +1,28 @@
 
 
-$cyan: #00A9B9;
-$ocean: #00B8D9;
-$teal: #20C997;
+$primary: #5677fc;
+$secondary: #38424E;
 $success: #28A745;
 $info: #00A9B9;
+
+$dark-grey: #9D9D9C;
+$light-grey: #D4E4F0;
+$mid-grey: #A7BAC9;
+
+$muted-text: #7B7B7B;
 
 $io-background: #F7F7F7;
 $max-width: 1200px;
 
-:export {
-  cyan: $cyan;
-}
+$border-radius: 5px;
 
 $spacing : (
   'xs': 5px,
   'sm': 8px,
   'md': 16px,
   'lg': 30px,
-  'xl': 36px 
+  'xl': 36px,
+  'xxl': 72px,
 );
 
 $spacing-xs: map-get($spacing, xs);
@@ -26,3 +30,7 @@ $spacing-sm: map-get($spacing, sm);
 $spacing-md: map-get($spacing, md);
 $spacing-lg: map-get($spacing, lg);
 $spacing-xl: map-get($spacing, xl);
+
+:export {
+  primary: $primary;
+}

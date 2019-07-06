@@ -1,0 +1,52 @@
+@import '../abstarcts/variables.scss';
+
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  white: white,
+  black: black,
+  muted: $muted-text
+);
+
+$points: (
+  xs: 10px,
+  sm: 12px,
+  md: 15px,
+  lg: 18px,
+  xl: 30px,
+  xxl: 36px,
+);
+
+$aligns: (
+  rt: right,
+  lft: left,
+  cen: center,
+);
+
+@each $size, $value in $points {
+  .io-#{$size}-font {
+   font-size: $value
+ }
+}
+  
+@each $align, $value in $aligns {
+  .io-text-#{$align} {
+    text-align: $value;
+  }
+}
+
+@each $type, $color in $colors {
+  .io-text-#{$type} {
+    color: $color;
+  }
+}
+
+@each $type, $color in $colors {
+  .io-#{$type}-background {
+    background: $color;
+  }
+} 
+
+.io-clickable {
+  cursor: pointer;
+}
