@@ -8,7 +8,6 @@ class MainLayout extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Header {...this.props} logout={this.props.logout} /> */}
         <div className={'io-mainlayout'}>
           {this.props.children}
         </div>
