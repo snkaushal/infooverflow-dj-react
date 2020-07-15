@@ -7,6 +7,7 @@ import * as actionTypes from '../../../store/actions/auth';
 class MainLayout extends React.Component {
   render() {
     return (
+      // a comment was here
       <React.Fragment>
         <div className={'io-mainlayout'}>
           {this.props.children}
